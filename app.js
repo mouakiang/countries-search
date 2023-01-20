@@ -17,7 +17,16 @@ let continents = [];
 /* Events */
 window.addEventListener('load', async () => {});
 
-async function findCountries(continent) {}
+async function findCountries(continent) {
+    // Slice A: call the asynchronous fetch function to get the countries
+    // Slice C: add continent argument to getCountries function call
+    const response = await getCountries(continent);
+    // console log the response object to see all of the nested information returned
+    // Slice A: set the countries state to the response.data
+    countries = response.data;
+    // Slice A: call displayCountries function;
+    displayCountries();
+}
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
