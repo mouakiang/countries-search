@@ -15,7 +15,16 @@ let countries = [];
 let continents = [];
 
 /* Events */
-window.addEventListener('load', async () => {});
+window.addEventListener('load', async () => {
+    // call findCountries function with no arguments to fetch all countries (Slice A);
+    findCountries();
+    // Slice B: call asynchronous getContinents fetch function and set to response variable
+    const response = await getContinents();
+    // Slice B: set the continents state to the response.data
+    continents = response.data;
+    // Slice B: call displayContinentOptions function;
+    displayContinentOptions();
+});
 
 async function findCountries(continent) {
     // Slice A: call the asynchronous fetch function to get the countries
